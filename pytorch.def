@@ -1,0 +1,14 @@
+BootStrap: localimage
+From: pytorch_latest.sif
+#singularity pull docker://pytorch/pytorch:latest
+
+%post
+    apt-get update
+    apt-get install -y \
+        vim \
+        wget \
+        make \
+        curl
+
+    pip3 install --upgrade pip
+    pip3 install tqdm numpy matplotlib seaborn
